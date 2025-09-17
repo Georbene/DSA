@@ -1,0 +1,54 @@
+STRING
+A string is a sequence of characters enclosed in quotes (single, double, or backticks in JavaScript). Strings are used to represent text such as words, sentences, or even numbers stored as text.
+5 string methods
+1. length → Returns the number of characters in the string.
+2. toUpperCase() → Converts all characters to uppercase.
+3. toLowerCase() → Converts all characters to lowercase.
+4. includes() → Checks if a string contains another string (returns true/false).
+5. slice(start, end) → Extracts a part of the string (does not change the original).
+
+ARRAY
+An array is a collection of elements (numbers, strings, objects, etc.) stored in a single variable. Elements are stored in indexed order starting from 0.
+5 array methods
+1. push() → Adds an element to the end of the array.
+2. pop() → Removes the last element of the array. 
+3. shift() → Removes the first element of the array.
+4. unshift() → Adds an element to the beginning of the array.
+5. map() → Creates a new array by applying a function to each element.
+
+
+function evaluateNumbers(numbers) {
+  if (numbers.length === 0) {
+    return null;
+  }
+
+  const minNumber = Math.min(...numbers);
+  const maxNumber = Math.max(...numbers);
+  const sumNumbers = numbers.reduce((total, num) => total + num, 0);
+  const average = sumNumbers / numbers.length;
+
+  return [minNumber, maxNumber, average, sumNumbers];
+}
+
+// Example usage
+const numbers = [2, 1, 7, 3, 2, 9, 5];
+const result = evaluateNumbers(numbers);
+console.log(result);  // Outputs: [1, 9, 4.142857142857143, 29]
+
+
+
+
+function checkDays(days, meals) {
+  if (days <= 0 || meals <= 0) {
+    return "Invalid input: days and meals must be positive integers.";
+  }
+
+  for (let i = 1; i <= days; i++) {
+    for (let j = 1; j <= meals; j++) {
+      console.log(`Day ${i} Meal ${j}`);
+    }
+  }
+}
+
+// Example usage
+checkDays(3, 2);
